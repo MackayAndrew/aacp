@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+.DS_Store
+benchmarks/*.json
+registry/unknown_patterns.json
