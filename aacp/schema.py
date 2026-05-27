@@ -1,5 +1,5 @@
 """
-AACP v1.0 Schema — pipe-delimited format with named fields.
+AACP v1.1 Schema — pipe-delimited format with named fields.
 
 Packet format:
   TASK|DOM|res:RES|period:PERIOD|filter:FILTER|fields:FIELDS|fmt:FMT|return:AGENT|p:PRIORITY|aacp:VERSION[|key:value...]

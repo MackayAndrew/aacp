@@ -2,46 +2,53 @@
 
 **A pipe-delimited coordination protocol for multi-agent LLM systems.**
 
-> Status: `v1.0-draft` · Benchmarks measured · Feedback welcome
+> Status: `v1.1-draft` · Benchmarks measured · MIT Licensed · Feedback welcome
 
 ---
 
 ## The Problem
 
-When AI agents coordinate with each other they communicate in full natural language — verbose, ambiguous, and expensive to tokenise. Every inter-agent instruction is an API call. In multi-agent workflows with many hops, coordination overhead compounds.
+When AI agents coordinate with each other they communicate in full natural
+language — verbose, ambiguous, and token-expensive. Every inter-agent
+instruction is an API call. In multi-agent workflows with many hops,
+coordination overhead compounds.
 
 **The same instruction, two ways:**
 
 ```
-English (56 tokens on Claude):
+English (56 tokens):
 "Please retrieve the employee salary records for the period ending
 31 August 2024. I need all active employees, their departments,
 cost centres, base salary, any changes made this month, and pension
 contribution rates. Return as JSON array."
 
-AACP v1.0 (48 tokens on Claude):
-FETCH|HR|res:emp_salary|period:2024-08|filter:status=active|fields:id,dept,cc,base_sal,delta,pension_rate|fmt:json|return:HR-Agent|p:1|aacp:1.0
+AACP v1.1 (52 tokens):
+FETCH|HR|return:HR-Agent|p:1|aacp:1.1|res:emp_salary|period:2024-08|filter:status=active|fmt:json
 ```
 
 ---
 
 ## Measured Results
 
-Token counts measured from live API `usage_metadata`. Not estimated.
-4 payroll workflow hops. Both Claude Sonnet 4.5 and GPT-4o.
+Token counts measured from live API `usage_metadata`.
+Not estimated. 4 payroll workflow hops. Claude Sonnet 4.5 and GPT-4o.
+Bare coordination message only — no system prompt, no task content.
 
-| | English | AACP v1.0 | Delta |
-|---|---|---|---|
-| Claude Sonnet 4.5 | 240 tokens | ~188 tokens | **~22% reduction** |
-| GPT-4o | 219 tokens | ~168 tokens | **~23% reduction** |
+| Hop | English | AACP | Claude | GPT-4o |
+|---|---|---|---|---|
+| fetch employees | 56 | 52 | -7.1% | -12.7% |
+| fetch budgets | 57 | 47 | -17.5% | -16.0% |
+| merge calculate | 65 | 43 | -33.8% | -31.6% |
+| generate report | 62 | 43 | -30.6% | -33.3% |
+| **TOTAL** | **240** | **185** | **-22.9%** | **-23.7%** |
 
-Consistent cross-model. Measured not estimated.
+Consistent cross-model. All hops show reduction.
 
 ---
 
 ## What AACP Does
 
-- Reduces coordination tokens by ~22% vs English (measured)
+- Reduces coordination tokens by ~23% vs verbose English (measured)
 - Provides structured, unambiguous, machine-parseable instructions
 - Enables deterministic zero-cost encoding for known workflows
 - Validates every packet against a typed schema before transmission
@@ -50,34 +57,37 @@ Consistent cross-model. Measured not estimated.
 
 ## What AACP Does Not Do
 
-- Reduce task tokens (the work an agent performs — unchanged)
+- Reduce task tokens — the work an agent performs is unchanged
+- Guarantee total workflow cost reduction without sufficient
+  coordination-to-task token ratio
 - Replace task-level instructions — only coordination messages
-- Guarantee total workflow cost reduction without sufficient hop count
+
+**Total workflow cost impact depends on your workflow type:**
+Coordination-heavy workflows (IT provisioning, structured pipelines)
+benefit most. Task-heavy workflows (contract review, open-ended research)
+see less impact because task tokens dominate.
 
 ---
 
 ## Packet Format
 
 ```
-TASK|DOM|res:RES|period:PERIOD|filter:FILTER|fields:FIELDS|fmt:FMT|return:AGENT|p:PRIORITY|aacp:VERSION
+TASK|DOM|return:AGENT|p:PRIORITY|aacp:VERSION|key:value|key:value...
 ```
 
-**Positional fields (0–9):**
+TASK and DOM are positional (fields 0 and 1).
+All other fields are named `key:value` pairs. No empty positional slots.
 
-| Position | Key | Required | Description |
-|---|---|---|---|
-| 0 | TASK | ✓ | Action: FETCH PROC FLAG RESOLVE LOG SEND BUILD MERGE CALC REPORT |
-| 1 | DOM | ✓ | Domain: HR FIN SALES LEGAL IT CS MKT |
-| 2 | res: | — | Resource identifier |
-| 3 | period: | — | Time period |
-| 4 | filter: | — | Filter expression |
-| 5 | fields: | — | Comma-separated return fields |
-| 6 | fmt: | — | Output format: json pdf xlsx csv |
-| 7 | return: | ✓ | Receiving agent ID |
-| 8 | p: | — | Priority: 1=critical 2=medium 3=low |
-| 9 | aacp: | ✓ | Version tag: aacp:1.0 |
+**Required:** `TASK` `DOM` `return:` `aacp:`
+**Optional:** `res:` `period:` `filter:` `fields:` `fmt:` `p:`
 
-**Extended fields** (appended after position 9 as `|key:value`):
+**Valid TASK values:**
+`FETCH` `PROC` `FLAG` `RESOLVE` `LOG` `SEND` `BUILD` `MERGE` `CALC` `REPORT` `ACK` `SYNC`
+
+**Valid DOM values:**
+`HR` `FIN` `SALES` `LEGAL` `IT` `CS` `MKT`
+
+**Extended fields** (append as `|key:value` after core):
 `src` `src_prev` `rules` `validate` `tmpl` `data_ptr` `amt` `ccy`
 `sup` `match` `terms` `type` `party` `clause` `issue` `risk`
 `block` `flags` `req` `highlight` `status` `to` `subj` `att`
@@ -87,16 +97,22 @@ TASK|DOM|res:RES|period:PERIOD|filter:FILTER|fields:FIELDS|fmt:FMT|return:AGENT|
 
 ```
 # Fetch employee records
-FETCH|HR|res:emp_salary|period:2024-08|filter:status=active|fields:id,dept,cc,base_sal|fmt:json|return:HR-Agent|p:1|aacp:1.0
+FETCH|HR|return:HR-Agent|p:1|aacp:1.1|res:emp_salary|period:2024-08|filter:status=active|fmt:json
 
-# Process invoice
-PROC|FIN|res:invoice||||fmt:json|return:FIN-Agent|p:2|aacp:1.0|sup:ABC-Ltd|amt:4200|ccy:GBP|match:PO-441|terms:net30
+# Merge and calculate
+MERGE|HR|return:HR-Agent|p:1|aacp:1.1|rules:payroll_v2|validate:budget_cc
 
-# Flag NDA clause
-FLAG|LEGAL|||||  |return:LEG-Agent|p:1|aacp:1.0|type:NDA|party:Acme-Ltd|clause:s7|issue:ip_rights_restriction|risk:high|block:signature
+# Flag legal clause
+FLAG|LEGAL|return:LEG-Agent|p:1|aacp:1.1|type:NDA|party:Acme-Ltd|clause:s7|issue:ip_rights_restriction|risk:high|block:signature
 
 # IT provisioning
-BUILD|IT|res:ad_account||filter:usr=j.smith|fields:email,dept,grp,pwd_reset||return:IT-Agent|p:1|aacp:1.0
+BUILD|IT|return:IT-Agent|p:1|aacp:1.1|res:ad_account|filter:usr=j.smith|fields:email,dept,grp,pwd_reset
+
+# Process invoice
+PROC|FIN|return:FIN-Agent|p:2|aacp:1.1|res:invoice|sup:ABC-Ltd|amt:4200|ccy:GBP|match:PO-441|terms:net30
+
+# Resolve customer issue
+RESOLVE|CS|return:CS-Agent|p:1|aacp:1.1|sentiment:negative|tone:empathetic|ltv:8000|ccy:GBP|req:goodwill_consider
 ```
 
 ---
@@ -114,31 +130,31 @@ from aacp.encoders.workflows.payroll import PayrollEncoder
 enc = PayrollEncoder()
 pkt = enc.fetch_employees(period="2024-08")
 print(pkt.packet)
-# FETCH|HR|res:emp_salary|period:2024-08|filter:status=active|...
+# FETCH|HR|return:HR-Agent|p:1|aacp:1.1|res:emp_salary|period:2024-08|filter:status=active|fmt:json
 print(f"Cost: ${pkt.api_cost_usd:.2f}")  # $0.00
 
 # Validate any packet
 from aacp import AACPValidator
 v = AACPValidator()
-result = v.validate(pkt.packet)
-print(result.summary())
+print(v.validate(pkt.packet).summary())
 
 # Decode any packet to English
 from aacp import AACPDecoder
 d = AACPDecoder()
-decoded = d.decode(pkt.packet)
-print(decoded.english)
+print(d.decode(pkt.packet).english)
 
 # Novel instructions — fallback to LLM, logged to registry
 from aacp.encoders.fallback import FallbackEncoder
 enc = FallbackEncoder()
 pkt = enc.encode_english(
-    english="Cross-reference new employee against background check DB.",
-    domain="HR", return_agent="HR-Agent"
+    english="Cross-reference new employee against background check database.",
+    domain="HR",
+    return_agent="HR-Agent"
 )
 ```
 
 Run the demo (no API key needed):
+
 ```bash
 python3 examples/demo.py
 ```
@@ -147,17 +163,19 @@ python3 examples/demo.py
 
 ## Workflow Encoders
 
-Pre-built zero-cost encoders for common business workflows:
+Pre-built zero-cost encoders for common business workflows.
+Zero LLM calls. Deterministic output. $0.00 per packet.
 
-| Encoder | Workflows | Hops |
+| Encoder | Workflow | Packets |
 |---|---|---|
 | `PayrollEncoder` | Monthly payroll run | 6 |
 | `ITEncoder` | New employee provisioning | 6 |
 | `InvoiceEncoder` | AP invoice processing | 3 |
 | `ContractEncoder` | Legal contract review | 3 |
 
-For novel instructions: `FallbackEncoder` routes to LLM and logs the result
-to `registry/unknown_patterns.json` as a future rule-based candidate.
+For novel instructions: `FallbackEncoder` routes to LLM and logs
+the result to `registry/unknown_patterns.json` as a future
+rule-based candidate. One LLM call per novel pattern. Reused forever.
 
 ---
 
@@ -169,32 +187,63 @@ to `registry/unknown_patterns.json` as a future rule-based candidate.
 | A2A (Google/AAIF) | Coordination | Agent ↔ agent routing | AACP compresses A2A messages |
 | Gibberlink/GGWave | Transport | Audio channel | Audio-specific; AACP is text-native |
 
-AACP operates above transport protocols — inside message payloads, not at routing layer.
+AACP fills the gap: semantic compression of coordination message
+content. No existing protocol addresses this layer.
 
 ---
 
 ## Prior Work
 
-The verbosity problem in agent communication is independently documented:
+**EcoLANG** (Mou et al., Fudan University, May 2025, arXiv:2505.06904)
+independently identified agent communication verbosity as a problem
+and achieved >20% token reduction through evolved compression language
+for social simulation. AACP targets business workflow coordination
+with a structured packet schema rather than evolved natural language.
 
-**EcoLANG** (Mou et al., Fudan University, May 2025, arXiv:2505.06904):
-"There exists redundancy in current agent communication: when expressing
-the same intention, agents tend to use lengthy and repetitive language."
-EcoLANG achieved >20% token reduction through evolved compression language.
+---
 
-AACP targets business workflow coordination with a structured packet schema
-rather than evolved natural language. Both address the same observed problem.
+## Design Notes
+
+**Why pipe-delimited?**
+Four formats were benchmarked (bracket `[KEY:VALUE]`, JSON, pipe,
+abbreviated natural language). Pipe-delimited was the only format
+achieving consistent token reduction on both Claude and GPT-4o
+tokenisers. Bracket formats tokenise ~45% more expensively than
+English due to `[`, `]`, `:` character overhead.
+
+**Why keep field lists out of packets?**
+Embedding field lists (`fields:id,dept,cc,base_sal`) inflates
+coordination tokens significantly. A well-configured persistent
+agent knows its default return fields. The packet communicates
+intent; the agent's system prompt carries the schema.
+
+**Why not URI data pointers?**
+`://` and `/` in URIs tokenise very inefficiently. Data references
+belong in agent working memory, not in coordination messages.
+
+---
+
+## Benchmarks
+
+```bash
+export ANTHROPIC_API_KEY=...
+export OPENAI_API_KEY=...
+python3 benchmark/tokenisation_test.py
+```
+
+All benchmark results published in `benchmarks/`.
+Raw JSON files available for independent verification.
 
 ---
 
 ## Roadmap
 
-| Version | Focus |
-|---|---|
-| `v1.0` (now) | Pipe-delimited format, rule-based encoders, measured benchmarks |
-| `v1.1` | PyPI package (`pip install aacp`), TypeScript SDK |
-| `v1.2` | Cross-model benchmark suite, persistent agent benchmarks |
-| `v2.0` | Community encoding registry, IETF Internet-Draft |
+| Version | Status | Focus |
+|---|---|---|
+| v1.0 | Released | Pipe-delimited format, rule-based encoders, working SDK |
+| v1.1 | Released | Validated benchmarks — -22.9% Claude, -23.7% GPT-4o |
+| v1.2 | Planned | PyPI package (`pip install aacp`), TypeScript SDK |
+| v2.0 | Planned | IETF Internet-Draft, community encoding registry |
 
 ---
 
@@ -203,11 +252,11 @@ rather than evolved natural language. Both address the same observed problem.
 Draft specification. Issues, PRs, and counter-proposals welcome.
 
 ```
-/aacp         Python package
-/benchmark    Benchmark harness
-/benchmarks   Published results
-/examples     Working demos
-/registry     LLM fallback pattern log
+aacp/           Python package — encoder, decoder, validator
+benchmark/      Benchmark harness and tokenisation tests
+benchmarks/     Published results (JSON + summary)
+examples/       Working demos
+registry/       LLM fallback pattern log
 ```
 
 ---
@@ -216,6 +265,6 @@ Draft specification. Issues, PRs, and counter-proposals welcome.
 
 MIT — free to use, implement, extend, and fork.
 
-*AACP is an independent protocol proposal. Not affiliated with Anthropic,
-Google, IBM, or the Linux Foundation, though designed to complement their
-respective protocol work (MCP, A2A, ACP).*
+*AACP is an independent protocol proposal. Not affiliated with
+Anthropic, Google, IBM, or the Linux Foundation, though designed
+to complement their respective protocol work (MCP, A2A, ACP).*
