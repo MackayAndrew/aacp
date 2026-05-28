@@ -3,6 +3,7 @@
 **A pipe-delimited coordination protocol for multi-agent LLM systems.**
 
 > Status: `v1.1-draft` · Benchmarks measured · MIT Licensed · Feedback welcome
+**IETF Internet-Draft:** [draft-mackay-aacp-00](https://datatracker.ietf.org/doc/draft-mackay-aacp/)
 
 ---
 
