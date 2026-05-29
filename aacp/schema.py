@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Optional
 
-AACP_VERSION = "1.0"
+AACP_VERSION = "1.1"
 
 FIELD_POSITIONS = {
     0: "TASK", 1: "DOM", 2: "res", 3: "period",
