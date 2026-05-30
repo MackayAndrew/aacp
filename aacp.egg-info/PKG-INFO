@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: aacp
-Version: 1.1.0
+Version: 1.2.0
 Summary: Agent Action Compression Protocol — pipe-delimited coordination for multi-agent LLM systems
 Author-email: Andrew Mackay <mackayandrewr@gmail.com>
 License: MIT
@@ -30,13 +30,14 @@ Requires-Dist: openai>=1.0.0; extra == "all"
 Dynamic: license-file
 
 # AACP — Agent Action Compression Protocol
+[![PyPI version](https://badge.fury.io/py/aacp.svg)](https://pypi.org/project/aacp/)
 
 **A pipe-delimited coordination protocol for multi-agent LLM systems.**
 
 > Status: `v1.1-draft` · Benchmarks measured · MIT Licensed · Feedback welcome
+
 **IETF Internet-Draft:** [draft-mackay-aacp-00](https://datatracker.ietf.org/doc/draft-mackay-aacp/)
 **Working lab:** [github.com/MackayAndrew/aacp-lab](https://github.com/MackayAndrew/aacp-lab) — 4-model payroll workflow with Excel output
-
 ---
 
 ## The Problem
@@ -153,7 +154,7 @@ RESOLVE|CS|return:CS-Agent|p:1|aacp:1.1|sentiment:negative|tone:empathetic|ltv:8
 ## Quick Start
 
 ```bash
-pip install -r requirements.txt
+pip install aacp
 ```
 
 ```python

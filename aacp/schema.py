@@ -1,5 +1,5 @@
 """
-AACP v1.1 Schema — pipe-delimited format with named fields.
+AACP v1.2 Schema — pipe-delimited format with named fields.
 
 Packet format:
   TASK|DOM|res:RES|period:PERIOD|filter:FILTER|fields:FIELDS|fmt:FMT|return:AGENT|p:PRIORITY|aacp:VERSION[|key:value...]
@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Optional
 
-AACP_VERSION = "1.1"
+AACP_VERSION = "1.2"
 
 FIELD_POSITIONS = {
     0: "TASK", 1: "DOM", 2: "res", 3: "period",
