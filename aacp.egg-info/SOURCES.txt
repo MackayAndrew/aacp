@@ -17,7 +17,13 @@ aacp/encoders/fallback.py
 aacp/encoders/llm.py
 aacp/encoders/rule_based.py
 aacp/encoders/workflows/__init__.py
+aacp/encoders/workflows/__init__old.py
+aacp/encoders/workflows/customer_service.py
 aacp/encoders/workflows/finance_legal.py
 aacp/encoders/workflows/it_provisioning.py
+aacp/encoders/workflows/jml.py
+aacp/encoders/workflows/month_end.py
 aacp/encoders/workflows/payroll.py
+aacp/encoders/workflows/sales.py
 tests/test_fallback_loop.py
+tests/test_new_encoders.py

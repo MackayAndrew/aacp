@@ -39,7 +39,9 @@ class RuleBasedEncoder(BaseEncoder):
         att: str = None, flag_msg: str = None,
         tone: str = None, sentiment: str = None,
         actor: str = None, chain: list = None,
-        prog: float = None, **kwargs,
+        prog: float = None,
+        ltv=None, loyalty: str = None, urgency: str = None,
+        **kwargs,
     ) -> EncodedPacket:
 
         # Core: TASK and DOM positional, everything else named
@@ -86,6 +88,9 @@ class RuleBasedEncoder(BaseEncoder):
         add("prog",     f"{prog:.2f}" if prog is not None else None)
         add("actor",    actor)
         add("chain",    ",".join(chain) if chain else None)
+        add("ltv",      str(ltv) if ltv is not None else None)
+        add("loyalty",  loyalty)
+        add("urgency",  urgency)
 
         packet = "|".join(parts)
 
