@@ -1,0 +1,1616 @@
+{
+  "benchmark": "amortisation",
+  "version": "aacp-v1.3",
+  "started": "2026-06-01T17:20:03.548523+00:00",
+  "completed": "2026-06-01T17:20:33.971066+00:00",
+  "runs_per_instruction": 30,
+  "scenarios": {
+    "A": {
+      "scenario": "A",
+      "instruction": "Cross-reference all contractors against the approved vendor list and flag any without a valid purchase order for Q2 2026.",
+      "domain": "FIN",
+      "runs": 30,
+      "results": [
+        {
+          "run": 1,
+          "encoder": "llm",
+          "cost_usd": 0.00192,
+          "latency_ms": 4062.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 2,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 3,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 4,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 5,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 6,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 7,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 8,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 9,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 10,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 11,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 12,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 13,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 14,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 15,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 16,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 17,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 18,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 19,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 20,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 21,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 22,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 23,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 24,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 25,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 26,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 27,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 28,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 29,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        },
+        {
+          "run": 30,
+          "encoder": "rule_based",
+          "cost_usd": 0.0,
+          "latency_ms": 1.0,
+          "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+        }
+      ],
+      "llm_calls": 1,
+      "total_cost_usd": 0.00192,
+      "without_aacp_usd": 0.018,
+      "saving_usd": 0.0161,
+      "saving_pct": 89.3
+    },
+    "B": {
+      "scenario": "B",
+      "instructions": 5,
+      "runs_each": 30,
+      "results": [
+        {
+          "instruction_n": 1,
+          "domain": "FIN",
+          "english": "Cross-reference all contractors against the approved vendor list and flag any without a valid purchase order for Q2 2026.",
+          "llm_calls": 0,
+          "total_cost_usd": 0.0,
+          "runs": [
+            {
+              "run": 1,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 2,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 4,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 5,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 6,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 7,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 8,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 9,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 10,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 11,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 12,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 13,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 14,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 15,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 16,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 17,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 18,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 19,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 20,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 21,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 22,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 23,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 24,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 25,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 26,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 27,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 28,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 29,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            },
+            {
+              "run": 30,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|FIN|return:FIN-Agent|p:2|aacp:1.1|res:contractors|match:approved_vendors|period:2026-Q2|filter:missing_po|validate:po_exists"
+            }
+          ]
+        },
+        {
+          "instruction_n": 2,
+          "domain": "HR",
+          "english": "Retrieve all employees who have not completed their annual compliance training module and send reminders to their line managers.",
+          "llm_calls": 1,
+          "total_cost_usd": 0.00207,
+          "runs": [
+            {
+              "run": 1,
+              "encoder": "llm",
+              "cost_usd": 0.00207,
+              "latency_ms": 6768.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 2,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 4.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 4,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 5,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 6,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 7,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 8,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 9,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 10,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 11,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 12,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 13,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 14,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 15,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 16,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 17,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 18,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 19,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 20,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 21,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 22,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 23,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 24,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 25,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 26,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 27,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 28,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 29,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            },
+            {
+              "run": 30,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|HR|return:HR-Agent|p:2|aacp:1.1|res:emp_training|filter:status=incomplete,type=annual_compliance|fields:emp_id,manager_id,training_status"
+            }
+          ]
+        },
+        {
+          "instruction_n": 3,
+          "domain": "IT",
+          "english": "Audit all service accounts created in the last 90 days and flag any that have not been reviewed or do not have an assigned owner.",
+          "llm_calls": 1,
+          "total_cost_usd": 0.002067,
+          "runs": [
+            {
+              "run": 1,
+              "encoder": "llm",
+              "cost_usd": 0.002067,
+              "latency_ms": 5091.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 2,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 3.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 4,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 5,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 6,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 7,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 8,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 9,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 10,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 11,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 12,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 9.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 13,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 14,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 15,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 16,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 17,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 18,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 19,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 20,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 21,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 22,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 23,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 24,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 25,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 26,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 27,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 28,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 29,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            },
+            {
+              "run": 30,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|IT|return:IT-Agent|p:2|aacp:1.1|res:service_accounts|period:last_90d|filter:review_status=pending OR owner=null|flags:no_review,no_owner"
+            }
+          ]
+        },
+        {
+          "instruction_n": 4,
+          "domain": "LEGAL",
+          "english": "Review all contracts expiring in the next 60 days and flag those with auto-renewal clauses that require 30 days notice to cancel.",
+          "llm_calls": 1,
+          "total_cost_usd": 0.001953,
+          "runs": [
+            {
+              "run": 1,
+              "encoder": "llm",
+              "cost_usd": 0.001953,
+              "latency_ms": 4264.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 2,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 4,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 5,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 6,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 7,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 8,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 9,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 10,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 11,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 12,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 13,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 14,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 15,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 16,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 17,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 18,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 19,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 20,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 21,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 22,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 10.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 23,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 5.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 24,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 3.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 25,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 26,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 27,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 28,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 29,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 3.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            },
+            {
+              "run": 30,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 4.0,
+              "packet": "FETCH|LEGAL|return:LEGAL-Agent|p:2|aacp:1.1|res:contracts|filter:expires_within=60d AND auto_renew=true AND cancel_notice=30d|flags:renewal_risk"
+            }
+          ]
+        },
+        {
+          "instruction_n": 5,
+          "domain": "SALES",
+          "english": "Identify all opportunities in the pipeline that have had no activity in the last 14 days and escalate to the sales manager for review.",
+          "llm_calls": 1,
+          "total_cost_usd": 0.002022,
+          "runs": [
+            {
+              "run": 1,
+              "encoder": "llm",
+              "cost_usd": 0.002022,
+              "latency_ms": 4972.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 2,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 3.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 3,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 4,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 5,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 6,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 7,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 8,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 9,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 10,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 11,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 12,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 13,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 14,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 15,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 2.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 16,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 17,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 18,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 19,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 20,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 21,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 22,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 23,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 24,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 25,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 26,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 27,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 28,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 29,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            },
+            {
+              "run": 30,
+              "encoder": "rule_based",
+              "cost_usd": 0.0,
+              "latency_ms": 1.0,
+              "packet": "FLAG|SALES|return:SALES-Agent|p:2|aacp:1.1|res:opportunities|filter:no_activity_days>=14|actor:sales_manager|status:escalated"
+            }
+          ]
+        }
+      ],
+      "total_llm_calls": 4,
+      "total_cost_usd": 0.008112,
+      "without_aacp_usd": 0.09,
+      "saving_usd": 0.0819,
+      "saving_pct": 91.0
+    },
+    "C": {
+      "scenario": "C",
+      "payroll_encoder": {
+        "type": "rule_based",
+        "runs": 30,
+        "llm_calls": 0,
+        "total_cost_usd": 0.0
+      },
+      "novel_instruction": {
+        "english": "Generate a variance report comparing actual spend against forecast for all cost centres in Q1 FY2026, flagging any that exceed 10% variance.",
+        "domain": "FIN",
+        "runs": 30,
+        "llm_calls": 1,
+        "total_cost_usd": 0.002016,
+        "runs_detail": [
+          {
+            "run": 1,
+            "encoder": "llm",
+            "cost_usd": 0.002016,
+            "latency_ms": 4984.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 2,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 3,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 1.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 3,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 1.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 4,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 1.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 5,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 1.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 6,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 1.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 7,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 1.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 8,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 9,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 10,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 11,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 1.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 12,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 13,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 14,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 15,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 16,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 17,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 18,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 19,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 20,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 21,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 22,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 23,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 24,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 25,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 26,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 27,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 3.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 28,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 2.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 29,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 3.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          },
+          {
+            "run": 30,
+            "encoder": "rule_based",
+            "cost_usd": 0.0,
+            "latency_ms": 3.0,
+            "packet": "REPORT|FIN|return:FIN-Agent|p:2|aacp:1.1|res:variance|period:Q1-FY2026|filter:variance_gt_10pct|fmt:flagged"
+          }
+        ]
+      }
+    }
+  },
+  "summary": {
+    "total_runs": 240,
+    "total_llm_calls": 6,
+    "total_cost_usd": 0.012048,
+    "without_aacp_usd": 0.144,
+    "overall_saving_pct": 91.6
+  }
+}

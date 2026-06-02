@@ -10,6 +10,7 @@
 **IETF Internet-Draft:** [draft-mackay-aacp-01](https://datatracker.ietf.org/doc/draft-mackay-aacp/)
 **Working lab:** [github.com/MackayAndrew/aacp-lab](https://github.com/MackayAndrew/aacp-lab) — 4-model payroll workflow with Excel output
 **TypeScript SDK:** [github.com/MackayAndrew/aacp-ts](https://github.com/MackayAndrew/aacp-ts) — `npm install aacp-ts`
+**Community Rules:** [github.com/MackayAndrew/aacp-community-rules](https://github.com/MackayAndrew/aacp-community-rules) — 191 validated rules across 7 domains
 
 ---
 
