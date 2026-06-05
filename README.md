@@ -83,7 +83,7 @@ Validated on real workflows. June 2026.
 | Framework | Coordination calls eliminated | Total cost saving | Deterministic |
 |---|---|---|---|
 | LangChain (59 hops) | 59 → 0 | 18% | YES |
-| CrewAI (4 hops) | 4 → 0 | 39% | YES |
+| CrewAI (4 hops) | 4 → 0 | 30% | YES |
 
 - [aacp-langchain](https://github.com/MackayAndrew/aacp-langchain) — `pip install aacp-langchain`
 - [aacp-crewai](https://github.com/MackayAndrew/aacp-crewai) — `pip install aacp-crewai`
