@@ -4,6 +4,7 @@ README.md
 pyproject.toml
 aacp/__init__.py
 aacp/decoder.py
+aacp/registry.py
 aacp/schema.py
 aacp/validator.py
 aacp.egg-info/PKG-INFO
@@ -27,3 +28,4 @@ aacp/encoders/workflows/payroll.py
 aacp/encoders/workflows/sales.py
 tests/test_fallback_loop.py
 tests/test_new_encoders.py
+tests/test_rule_registry.py
