@@ -3,28 +3,31 @@
 [![PyPI version](https://badge.fury.io/py/aacp.svg)](https://pypi.org/project/aacp/)
 [![npm version](https://badge.fury.io/js/aacp-ts.svg)](https://www.npmjs.com/package/aacp-ts)
 
-**A pipe-delimited coordination protocol for multi-agent LLM systems.**
+**Deterministic coordination for multi-agent LLM systems.**
 
-> Status: `v1.1-draft` · Benchmarks measured · MIT Licensed · Feedback welcome
+> Status: `v1.3` · Benchmarks measured · MIT Licensed · IETF Internet-Draft filed
 
-**IETF Internet-Draft:** [draft-mackay-aacp-01](https://datatracker.ietf.org/doc/draft-mackay-aacp/)
-**Working lab:** [github.com/MackayAndrew/aacp-lab](https://github.com/MackayAndrew/aacp-lab) — 4-model payroll workflow with Excel output
-**TypeScript SDK:** [github.com/MackayAndrew/aacp-ts](https://github.com/MackayAndrew/aacp-ts) — `npm install aacp-ts`
-**Community Rules:** [github.com/MackayAndrew/aacp-community-rules](https://github.com/MackayAndrew/aacp-community-rules) — 241 validated rules across 7 domains
+When agents coordinate in natural language, every instruction varies on every
+run, costs tokens, and produces no reliable audit trail. AACP replaces that
+with typed, validated, deterministic packets. Same input. Same output. Every time.
 
 ---
 
-## What AACP Does
+## Links
 
-AACP transforms verbose natural language agent-to-agent instructions
-into deterministic, auditable coordination packets. Structured. Typed.
-Validated. Open.
-
-For known workflow types, a rule-based encoder produces AACP packets
-deterministically at zero LLM cost. A three-tier fallback encoder
-handles novel instructions: exact matches served from registry cache
-at $0.00, pattern matches at $0.00, novel instructions encoded via
-LLM and logged -- one LLM call per novel pattern, reused indefinitely.
+| | |
+|---|---|
+| **Spec and site** | [aacp.dev](https://aacp.dev) |
+| **IETF Draft** | [draft-mackay-aacp-01](https://datatracker.ietf.org/doc/draft-mackay-aacp/) |
+| **Python SDK** | [github.com/MackayAndrew/aacp](https://github.com/MackayAndrew/aacp) — `pip install aacp` |
+| **TypeScript SDK** | [github.com/MackayAndrew/aacp-ts](https://github.com/MackayAndrew/aacp-ts) — `npm install aacp-ts` |
+| **LangChain** | [github.com/MackayAndrew/aacp-langchain](https://github.com/MackayAndrew/aacp-langchain) |
+| **CrewAI** | [github.com/MackayAndrew/aacp-crewai](https://github.com/MackayAndrew/aacp-crewai) |
+| **Community rules** | [github.com/MackayAndrew/aacp-community-rules](https://github.com/MackayAndrew/aacp-community-rules) — 241 rules |
+| **Registry API** | [registry.aacp.dev](https://registry.aacp.dev) |
+| **VS Code extension** | [Dispatch AACP](https://marketplace.visualstudio.com/items?itemName=dispatch-aacp.dispatch-aacp) |
+| **Packet builder** | [dispatch.aacp.dev](https://dispatch.aacp.dev) |
+| **Working lab** | [github.com/MackayAndrew/aacp-lab](https://github.com/MackayAndrew/aacp-lab) |
 
 ---
 
@@ -40,25 +43,24 @@ npm install aacp-ts
 
 ---
 
-## The Problem
+## The problem
 
 ```
-English (56 tokens):
+Natural language (56 tokens) — varies on every run, not auditable:
 "Please retrieve the employee salary records for the period ending
-31 August 2024. I need all active employees, their departments,
-cost centres, base salary, any changes made this month, and pension
+March 2026. I need all active employees, their departments, cost
+centres, base salary, any changes made this month, and pension
 contribution rates. Return as JSON array."
 
-AACP v1.1 (52 tokens):
-FETCH|HR|return:HR-Agent|p:1|aacp:1.1|res:emp_salary|period:2024-08|filter:status=active|fmt:json
+AACP v1.1 (52 tokens) — identical every run, validated, auditable:
+FETCH|HR|return:HR-Agent|p:1|aacp:1.1|res:emp_salary|period:2026-03|filter:status=active|fmt:json
 ```
 
 ---
 
-## Measured Results
+## Measured results
 
-Token counts measured from live API `usage_metadata`.
-Not estimated. 4-hop payroll workflow. May 2026.
+Token counts from live API `usage_metadata`. 4-hop payroll workflow. May 2026.
 
 | Hop | English | AACP | Claude | GPT-4o |
 |---|---|---|---|---|
@@ -68,12 +70,29 @@ Not estimated. 4-hop payroll workflow. May 2026.
 | generate report | 62 | 43 | -30.6% | -33.3% |
 | **TOTAL** | **240** | **185** | **-22.9%** | **-23.7%** |
 
+Token reduction is a secondary benefit. The primary value is determinism
+and auditability -- every packet is identical across runs and machine-readable
+without post-processing.
+
 ---
 
-## Quick Start (Python)
+## Framework integration results
+
+Validated on real workflows. June 2026.
+
+| Framework | Coordination calls eliminated | Total cost saving | Deterministic |
+|---|---|---|---|
+| LangChain (59 hops) | 59 → 0 | 18% | YES |
+| CrewAI (4 hops) | 4 → 0 | 39% | YES |
+
+- [aacp-langchain](https://github.com/MackayAndrew/aacp-langchain) — `pip install aacp-langchain`
+- [aacp-crewai](https://github.com/MackayAndrew/aacp-crewai) — `pip install aacp-crewai`
+
+---
+
+## Quick start (Python)
 
 ```python
-# Zero-cost rule-based encoding for known workflows
 from aacp.encoders.workflows.payroll import PayrollEncoder
 
 enc = PayrollEncoder()
@@ -81,16 +100,6 @@ pkt = enc.fetch_employees(period="2026-03")
 print(pkt.packet)
 # FETCH|HR|return:HR-Agent|p:1|aacp:1.1|res:emp_salary|period:2026-03|filter:status=active|fmt:json
 print(f"Cost: ${pkt.api_cost_usd:.2f}")  # $0.00
-
-# Validate any packet
-from aacp import AACPValidator
-v = AACPValidator()
-print(v.validate(pkt.packet).summary())
-
-# Decode any packet to English
-from aacp import AACPDecoder
-d = AACPDecoder()
-print(d.decode(pkt.packet).english)
 
 # Novel instructions — fallback to LLM, logged to registry
 from aacp.encoders.fallback import FallbackEncoder
@@ -100,11 +109,11 @@ pkt = enc.encode_english(
     domain="FIN",
     return_agent="FIN-Agent"
 )
-# First call: LLM, ~$0.0006
+# First call: LLM once, ~$0.002
 # Every subsequent identical call: $0.00 from registry cache
 ```
 
-## Quick Start (TypeScript)
+## Quick start (TypeScript)
 
 ```typescript
 import { PayrollEncoder, AACPValidator, AACPDecoder } from "aacp-ts";
@@ -112,146 +121,97 @@ import { PayrollEncoder, AACPValidator, AACPDecoder } from "aacp-ts";
 const enc = new PayrollEncoder();
 const pkt = enc.fetchEmployees("2026-03");
 console.log(pkt.packet);
-// FETCH|HR|return:HR-Agent|p:1|aacp:1.1|res:emp_salary|period:2026-03|filter:status=active|fmt:json
 console.log(pkt.apiCostUsd); // 0
-
-const v = new AACPValidator();
-console.log(v.validate(pkt.packet).valid); // true
-
-const d = new AACPDecoder();
-console.log(d.decode(pkt.packet).english);
 ```
 
 ---
 
-## Packet Format
+## Packet format
 
 ```
 TASK|DOM|return:AGENT|p:PRIORITY|aacp:VERSION|key:value|key:value...
 ```
 
-TASK and DOM are positional (fields 0 and 1).
-All other fields are named `key:value` pairs. No empty positional slots.
+**Valid TASK:** `FETCH` `PROC` `FLAG` `RESOLVE` `LOG` `SEND` `BUILD` `MERGE` `CALC` `REPORT` `ACK` `SYNC`
 
-**Required:** `TASK` `DOM` `return:` `aacp:`
-**Optional:** `res:` `period:` `filter:` `fields:` `fmt:` `p:`
-
-**Valid TASK values:**
-`FETCH` `PROC` `FLAG` `RESOLVE` `LOG` `SEND` `BUILD` `MERGE` `CALC` `REPORT` `ACK` `SYNC`
-
-**Valid DOM values:**
-`HR` `FIN` `SALES` `LEGAL` `IT` `CS` `MKT`
-
-**Examples:**
-
-```
-# Fetch employee records
-FETCH|HR|return:HR-Agent|p:1|aacp:1.1|res:emp_salary|period:2026-03|filter:status=active|fmt:json
-
-# Merge and calculate payroll
-MERGE|HR|return:HR-Agent|p:1|aacp:1.1|rules:payroll_v2|validate:budget_cc
-
-# Flag legal clause
-FLAG|LEGAL|return:LEG-Agent|p:1|aacp:1.1|type:NDA|party:Acme-Ltd|clause:s7|issue:ip_rights_restriction|risk:high|block:signature
-
-# Build IT account
-BUILD|IT|return:IT-Agent|p:1|aacp:1.1|res:ad_account|filter:usr=j.smith|fields:email,dept,grp,pwd_reset
-
-# Process invoice
-PROC|FIN|return:FIN-Agent|p:2|aacp:1.1|res:invoice|sup:ABC-Ltd|amt:4200|ccy:GBP|match:PO-441|terms:net30
-```
+**Valid DOM:** `HR` `FIN` `SALES` `LEGAL` `IT` `CS` `MKT`
 
 ---
 
-## Workflow Encoders
+## Workflow encoders
 
-Pre-built zero-cost encoders for common business workflows.
-Available in both Python and TypeScript.
+8 encoders across 6 domains, each grounded in a documented real-world platform.
+Available in Python and TypeScript. Zero LLM cost.
 
-| Encoder | Workflow | Hops |
-|---|---|---|
-| `PayrollEncoder` | Monthly payroll run | 6 |
-| `ITEncoder` | New employee provisioning | 5–6 |
-| `InvoiceEncoder` | AP invoice processing | 3 |
-| `ContractEncoder` | Legal contract review | 2–3 |
+| Encoder | Domain | Hops | Real-world basis |
+|---|---|---|---|
+| `PayrollEncoder` | HR | 6 | HMRC PAYE |
+| `ITEncoder` | IT | 5 | Microsoft Entra ID |
+| `InvoiceEncoder` | FIN | 3 | AP three-way match |
+| `ContractEncoder` | LEGAL | 2-3 | NDA/MSA review |
+| `SalesEncoder` | SALES | 5 | Salesforce Agentforce 2026 |
+| `JMLEncoder` | HR+IT | 6 | ConductorOne, Lumos, CloudEagle |
+| `CSResolutionEncoder` | CS | 5 | Zendesk Resolution Platform 2026 |
+| `MonthEndEncoder` | FIN | 6 | NetSuite Autonomous Close 2026 |
 
----
-
-## Tooling
-
-**Dispatch — VS Code Extension**
-Syntax highlighting, live validation, hover decode, autocomplete,
-and token count for AACP packets in `.aacp` files and inline in
-Python, TypeScript, and JavaScript.
-
-Install: [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=dispatch-aacp.dispatch-aacp)
-or search "Dispatch AACP" in the VS Code Extensions panel.
-
-**Dispatch — Web Builder**
-Browser-based packet builder and validator.
-Build packets with dropdowns, validate instantly, share via URL.
-
-[dispatch.aacp.dev](https://dispatch.aacp.dev)
+See [docs/encoder-reference.md](docs/encoder-reference.md) for citations.
 
 ---
 
-## Three-Tier Fallback Encoder
+## Three-tier fallback encoder
 
 ```
-Tier 1 — Hash cache
-  Exact same instruction seen before → cached packet → $0.00
-
-Tier 2 — Pattern match
-  Similar instruction matches registry or built-in → $0.00
-
-Tier 3 — LLM fallback
-  Novel instruction → LLM call → logged to registry → ~$0.0006
-  Same instruction next time → Tier 1 → $0.00
+Tier 1 — Hash cache:     exact match → $0.00
+Tier 2 — Pattern match:  registry or builtin → $0.00
+Tier 3 — LLM fallback:   novel → LLM once → logged → ~$0.002
+                          next call → Tier 1 → $0.00
 ```
 
-One LLM call per novel pattern. Reused indefinitely.
+Amortisation benchmark: 6 LLM calls across 240 encoding operations. 91.6% saving.
 
 ---
 
-## Multi-Model Lab Results
+## Community rule library
 
-4-model comparison on a 5-hop Q1 FY2026 payroll workflow.
-All four models correctly interpreted AACP v1.1 packets.
+241 pre-validated rules across 7 domains. MIT licensed. Zero API cost.
 
-| Model | Cost | Tokens in | Latency | Success |
+```python
+# Coming in v1.4:
+from aacp import RuleRegistry
+registry = RuleRegistry.from_community()
+registry = RuleRegistry.from_hosted()  # registry.aacp.dev
+```
+
+Browse: [github.com/MackayAndrew/aacp-community-rules](https://github.com/MackayAndrew/aacp-community-rules)
+API: [registry.aacp.dev](https://registry.aacp.dev)
+
+---
+
+## Multi-model lab results (Lab v3)
+
+5 workflows, 4 models, all passing. June 2026.
+
+| Model | Cost | Tokens in | Latency | Pass |
 |---|---|---|---|---|
-| gpt-4.1-mini | $0.0044 | 7,566 | 82.5s | ✓ |
-| gpt-4.1 | $0.0224 | 7,673 | 39.4s | ✓ |
-| claude-sonnet-4-5 | $0.0416 | 9,062 | 77.5s | ✓ |
-| gpt-4o | $0.0552 | 7,615 | 31.6s | ✓ |
+| gpt-4.1-mini | $0.0190 | 40,585 | 160s | ✓ 5/5 |
+| gpt-4.1 | $0.0984 | 41,005 | 124s | ✓ 5/5 |
+| claude-sonnet-4-5 | $0.2237 | 53,127 | 423s | ✓ 5/5 |
+| gpt-4o | $0.2408 | 40,459 | 101s | ✓ 5/5 |
 
 Lab: [github.com/MackayAndrew/aacp-lab](https://github.com/MackayAndrew/aacp-lab)
 
 ---
 
-## Relationship to Existing Protocols
+## Relationship to existing protocols
 
 | Protocol | Layer | AACP relationship |
 |---|---|---|
 | MCP (Anthropic/AAIF) | Tool access | AACP inside MCP payloads |
-| A2A (Google/AAIF) | Agent routing | AACP compresses A2A messages |
-| Gibberlink/GGWave | Audio transport | Audio-specific; AACP is text-native |
+| A2A (Google/AAIF) | Agent routing | AACP structures A2A message content |
+| Existing APIs / JSON | Service comms | AACP for the LLM agent coordination layer on top |
 
-AACP fills the coordination content layer -- no existing protocol
-addresses this specific layer.
-
----
-
-## Benchmarks
-
-```bash
-export ANTHROPIC_API_KEY=...
-export OPENAI_API_KEY=...
-python3 benchmark/tokenisation_test.py
-```
-
-Raw JSON results in `benchmarks/`. Total API cost to build and
-validate the entire protocol: under $2.00.
+AACP fills the coordination content layer -- the layer between routing
+(A2A, MCP) and task execution (the LLM doing actual work).
 
 ---
 
@@ -261,24 +221,10 @@ validate the entire protocol: under $2.00.
 |---|---|---|
 | v1.0 | Released | Pipe-delimited format, rule-based encoders |
 | v1.1 | Released | Validated benchmarks — -22.9% Claude, -23.7% GPT-4o |
-| v1.2 | Released | Fallback loop closed, PyPI + npm, IETF draft-01, TS SDK |
-| v1.3 | Planned | Additional workflow encoders, amortisation benchmark |
-| v2.0 | Planned | IETF draft-02, community encoding registry |
-
----
-
-## Contributing
-
-Draft specification. Issues, PRs, and counter-proposals welcome.
-
-```
-aacp/               Python package
-benchmark/          Benchmark harness
-benchmarks/         Published results
-examples/           Working demos
-registry/           LLM fallback pattern log
-tests/              Fallback loop tests
-```
+| v1.2 | Released | Fallback loop closed, PyPI + npm, IETF draft-01 |
+| v1.3 | Released | 8 encoders, TypeScript SDK, VS Code extension, community rules (241), lab v3, amortisation benchmark, LangChain + CrewAI integrations |
+| v1.4 | Planned | RuleRegistry (from_community, from_hosted), QBR encoder |
+| v2.0 | Planned | IETF draft-02, AAIF submission |
 
 ---
 
